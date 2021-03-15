@@ -1,0 +1,16 @@
+
+.rcw-avatar {
+    object-fit: contain;
+}
+
+.rcw-conversation-container > .rcw-header {
+    background-color: rgb(33, 30, 30);
+}
+
+.rcw-launcher {
+    background-color: rgb(33, 30, 30);
+}
+
+.rcw-message-text p {
+    font-size: smaller;
+}
