@@ -16,8 +16,8 @@ class Chat extends Component {
     }
 
     componentDidMount() {
-      addResponseMessage("Ingresá tu nombre por farol.");
-      this.socket = io('http://localhost:4000/');
+      addResponseMessage("Ingresá tu nombrel.");
+      this.socket = io(`http://localhost:6000`);
       this.socket.on('message', message => {
         addResponseMessage(`${message}`);
       });
@@ -26,7 +26,8 @@ class Chat extends Component {
     handleNewUserMessage = (newMessage) => {
       if (!this.state.name) {
         this.setState({name: newMessage}, () => {
-          addResponseMessage("¡Hola " + (this.state.name) + "! Soy Tomás del equipo de LUPY. Cualquier duda o consulta no dudes en preguntarla.");
+          const msj = "¡Hola " + (this.state.name) + "! Somos del equipo de Bebidas. Cualquier duda o consulta no dudes en preguntarla."
+          addResponseMessage(msj);
           this.socket.emit('auth', this.state.name);
         });
       }
